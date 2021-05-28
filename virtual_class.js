@@ -49,7 +49,17 @@ var timer = setInterval(function(){
     var chats = document.querySelectorAll('[data-sender-id]')
     if ((chats.length>0)&&(chats.length>old_length)){
         var result = {}
-        result[chats[chats.length-1].dataset.senderId] =[chats[chats.length-1].dataset.senderName,chats[chats.length-1].lastChild.outerText,chats[chats.length-1].dataset.timestamp]
+        var text = chats[chats.length-1].lastChild.outerText.split('\n')
+        result[chats[chats.length-1].dataset.senderId] =[chats[chats.length-1].dataset.senderName,text[text.length-1],chats[chats.length-1].dataset.timestamp]
+        text_length = text.length
+        old_length = chats.length
+        console.log(result)
+    }
+    else if ((chats.length===old_length)&&(text_length < chats[chats.length-1].lastChild.outerText.split('\n').length)){
+        var result = {}
+        var text = chats[chats.length-1].lastChild.outerText.split('\n')
+        result[chats[chats.length-1].dataset.senderId] =[chats[chats.length-1].dataset.senderName,text[text.length-1],chats[chats.length-1].dataset.timestamp]
+        text_length = text.length
         old_length = chats.length
         console.log(result)
     }
