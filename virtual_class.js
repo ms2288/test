@@ -73,9 +73,23 @@ var timer = setInterval(function(){
     if ((chats.length>0)&&(chats.length>old_length)){
         var result = {}
         for (let i=0;i<chats.length;i++){
-            result[chats[i].dataset.senderId] =[chats[i].dataset.senderName,chats[i].lastChild.outerText,chats[i].dataset.timestamp]
+            var text = chats[chats.length-1].lastChild.outerText.split('\n')
+            result[chats[i].dataset.senderId] =[chats[i].dataset.senderName,text[text.length-1],chats[i].dataset.timestamp]
             }
+        var text = chats[chats.length-1].lastChild.outerText.split('\n')
+        text_length = text.length
         old_length = chats.length
         console.log(result)
-        }
+    }
+    else if ((chats.length===old_length)&&(text_length < chats[chats.length-1].lastChild.outerText.split('\n').length)){
+        var result = {}
+        for (let i=0;i<chats.length;i++){
+            var text = chats[chats.length-1].lastChild.outerText.split('\n')
+            result[chats[i].dataset.senderId] =[chats[i].dataset.senderName,text[text.length-1],chats[i].dataset.timestamp]
+            }
+        var text = chats[chats.length-1].lastChild.outerText.split('\n')
+        text_length = text.length
+        old_length = chats.length
+        console.log(result)
+    }
 },1000)
