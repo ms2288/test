@@ -39,7 +39,7 @@ var timer = setInterval(function(){
         console.log(p_tag)
         old_state=new_state
     }
-},1000)
+},10)
 
 
 //채팅메세지 전송 기능 구현
@@ -92,4 +92,4 @@ var timer = setInterval(function(){
         old_length = chats.length
         console.log(result)
     }
-},1000)
+},10)
