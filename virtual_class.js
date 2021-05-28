@@ -1,4 +1,4 @@
-#발표화면 전송기능 구현
+//발표화면 전송기능 구현
 function send_display(){
     if (document.querySelectorAll('[data-tooltip="발표 시작"]').length===1){
         console.log("발표중지")
@@ -42,8 +42,8 @@ var timer = setInterval(function(){
 },1000)
 
 
-#채팅메세지 전송 기능 구현
-#버전1(최신값 하나만 출력)
+//채팅메세지 전송 기능 구현
+//버전1(최신값 하나만 출력)
 var old_length = 0
 var timer = setInterval(function(){
     var chats = document.querySelectorAll('[data-sender-id]')
@@ -56,7 +56,7 @@ var timer = setInterval(function(){
 },1000)
 
 
-#버전2(모든 사용자 message 출력)
+//버전2(모든 사용자 message 출력)
 var old_length = 0
 var timer = setInterval(function(){
     var chats = document.querySelectorAll('[data-sender-id]')
