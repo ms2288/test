@@ -63,7 +63,7 @@ var timer = setInterval(function(){
         old_length = chats.length
         console.log(result)
     }
-},1000)
+},10)
 
 
 //버전2(모든 사용자 message 출력)
